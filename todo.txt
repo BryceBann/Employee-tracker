@@ -1,0 +1,32 @@
+-npm packages
+inquier 
+mysql2
+console.table
+
+3 tables
+
+department
+-id int primary key
+-name varchar(30)
+
+id from department and departent id from role link
+
+role
+-id int primary key
+-title varchar(30)
+-salary int
+-department id int
+
+id from role and role id from employee link
+
+employee
+-id int primary key
+-first name varchar(30)
+-last name varchar(30)
+-role id int
+-department id int null if no manager 
+
+run a comand line app to ask questions about for creating tables and adding to tables
+
+
+
