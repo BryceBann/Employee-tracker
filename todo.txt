@@ -27,6 +27,8 @@ employee
 -department id int null if no manager 
 
 run a comand line app to ask questions about for creating tables and adding to tables
+use inquier to run the command line to update like team-generate chekcfor refresh
+wokr on seeding the for sql 
 
 
 
