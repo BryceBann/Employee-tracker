@@ -5,28 +5,28 @@ USE team_db;
 
 CREATE TABLE department(
 id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-department_name VARCHAR(30) UNIQUE NOT NULL
+department_name VARCHAR(30) UNIQUE 
 );
 
 CREATE TABLE employee_roles (
 id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-title VARCHAR(30) UNIQUE NOT NULL,
-salary INT UNSIGNED NOT NULL,
-department_id INT UNSIGNED NOT NULL,
-FOREIGN KEY (department_id),
-REFERENCES(department(id))ON DELETE SET NULL
+title VARCHAR(30) UNIQUE ,
+salary INT UNSIGNED ,
+department_id INT UNSIGNED ,
+FOREIGN KEY (department_id)
+REFERENCES department(id) ON DELETE
 );
 
 CREATE TABLE employee(
 id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-first_name VARCHAR(30) UNIQUE NOT NULL,
-last_name VARCHAR(30) UNIQUE NOT NULL,
-role_id INT UNSIGNED NOT NULL,
-FOREIGN KEY (role_id),
-REFERENCES(employee_roles(id)) ON DELETE SET NULL,
+first_name VARCHAR(30) UNIQUE ,
+last_name VARCHAR(30) UNIQUE,
+role_id INT UNSIGNED ,
+FOREIGN KEY (role_id)
+REFERENCES employee_roles(id),
 manager_id INT UNSIGNED,
-FOREIGN KEY(manager_id),
-REFERENCES(employee(id)) ON DELETE SET NULL
+FOREIGN KEY(manager_id)
+REFERENCES employee(id) ON DELETE
 );
 
 
