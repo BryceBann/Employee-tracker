@@ -1,12 +1,10 @@
-USE team_db;
-
 INSERT INTO department
 (department_name)
 VALUES
-('Receiving'),
-('Testing'),
-('Shipping'),
-('Inventory');
+('HUB Receiving'),
+('CMTx Testing'),
+('HUB Shipping'),
+('HUB Inventory');
 
 INSERT INTO employee_roles
 (title, salary, department_id)

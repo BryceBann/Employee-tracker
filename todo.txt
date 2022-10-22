@@ -30,5 +30,5 @@ run a comand line app to ask questions about for creating tables and adding to t
 use inquier to run the command line to update like team-generate chekcfor refresh
 wokr on seeding the for sql 
 
-
+add decimal on salary
 

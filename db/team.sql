@@ -4,29 +4,32 @@ CREATE DATABASE team_db;
 USE team_db;
 
 CREATE TABLE department(
-id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-department_name VARCHAR(30) UNIQUE 
+id INT NOT NULL AUTO_INCREMENT,
+department_name VARCHAR(30), 
+PRIMARY KEY (id)
 );
 
-CREATE TABLE employee_roles (
-id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-title VARCHAR(30) UNIQUE ,
-salary INT UNSIGNED ,
-department_id INT UNSIGNED ,
+CREATE TABLE employee_roles(
+id INT NOT NULL AUTO_INCREMENT,
+title VARCHAR(30),
+salary DECIMAL(8,2) NOT NULL,
+department_id INT,
 FOREIGN KEY (department_id)
-REFERENCES department(id) ON DELETE
+REFERENCES department(id),
+PRIMARY KEY (id) 
 );
 
 CREATE TABLE employee(
-id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-first_name VARCHAR(30) UNIQUE ,
-last_name VARCHAR(30) UNIQUE,
-role_id INT UNSIGNED ,
+id INT NOT NULL AUTO_INCREMENT,
+first_name VARCHAR(30),
+last_name VARCHAR(30),
+role_id INT,
+manager_id INT,
 FOREIGN KEY (role_id)
 REFERENCES employee_roles(id),
-manager_id INT UNSIGNED,
-FOREIGN KEY(manager_id)
-REFERENCES employee(id) ON DELETE
+CONSTRAINT FOREIGN KEY(manager_id)
+REFERENCES employee(id),
+PRIMARY KEY (id)
 );
 
 
