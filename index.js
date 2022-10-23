@@ -83,3 +83,7 @@ function prompt() {
             }
         });
 }
+
+function veiwAllEmployees() {
+    
+}
