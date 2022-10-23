@@ -32,3 +32,5 @@ wokr on seeding the for sql
 
 add decimal on salary
 
+checl on child on the tables for mysql inquier issues maybe
+
