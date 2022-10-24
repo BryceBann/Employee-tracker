@@ -80,9 +80,11 @@ function viewAllEmployees() {
 
 }
 function addEmployee() {
+
     prompt();
 }
 function updateEmployeeRole() {
+
     prompt();
 }
 function viewAllRoles() {
@@ -93,7 +95,7 @@ function viewAllRoles() {
 
 }
 function addRole() {
-    // 
+    
     prompt();
 }
 function viewAllDepartments() {
@@ -104,10 +106,12 @@ function viewAllDepartments() {
 }
 
 function addDepartment() {
+
     prompt();
 }
 
 function exit() {
+    
     prompt();
 }
 
