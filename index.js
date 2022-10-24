@@ -71,9 +71,13 @@ function prompt() {
         });
 }
 
+// functions to be called and used after question selection
 function viewAllEmployees() {
+    db.promise().query("SELECT * FROM employee").then(employeeInfo => {
+        console.table(employeeInfo[0])
+        prompt();
+    })
 
-    prompt();
 }
 function addEmployee() {
     prompt();
@@ -82,7 +86,11 @@ function updateEmployeeRole() {
     prompt();
 }
 function viewAllRoles() {
-    prompt();
+    db.promise().query("SELECT * FROM employee_roles").then(rolesInfo => {
+        console.table(rolesInfo[0])
+        prompt();
+    })
+
 }
 function addRole() {
     // 
