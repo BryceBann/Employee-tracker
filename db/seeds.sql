@@ -22,13 +22,13 @@ VALUES
 INSERT INTO employee
 (first_name, last_name, role_id, manager_id)
 VALUES
-('Name1', 'Name1', 1, 2),
-('Name2', 'Name2', 2, NULL),
-('Name3', 'Name3', 3, 4),
-('Name4', 'Name4', 4, NULL),
-('Name5', 'Name5', 5, 7),
-('Name6', 'Name6', 6, 7),
-('Name7', 'Name7', 7, NULL),
-('Name8', 'Name8', 8, 9),
-('Name9', 'Name9', 9, NULL);
+('Name1', 'Name1', 1, NULL),
+('Name2', 'Name2', 2, 1),
+('Name3', 'Name3', 3, NULL),
+('Name4', 'Name4', 4, 3),
+('Name5', 'Name5', 5, NULL),
+('Name6', 'Name6', 6, NULL),
+('Name7', 'Name7', 7, 5),
+('Name8', 'Name8', 8, NULL),
+('Name9', 'Name9', 9, 8);
 

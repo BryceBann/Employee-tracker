@@ -34,3 +34,7 @@ add decimal on salary
 
 checl on child on the tables for mysql inquier issues maybe
 
+calling order was wrong for seeds.sql
+
+add more questions on prompts and show table son views
+

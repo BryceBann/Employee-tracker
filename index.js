@@ -1,12 +1,11 @@
 //linking the requires packages and db
 const inquirer = require('inquirer');
-const mysql = require('mysql');
-const Connection = require('mysql2/typings/mysql/lib/Connection');
+const db = require('./db/connection')
 require('console.table');
 
 //a main menu of sort to start and end on for user input
-const baseQuestions = { 
-    veiwAllEmployees: "View all employees",
+const promptMessages= { 
+    viewAllEmployees: "View all employees",
     addEmployee: "Add employee",
     updateEmployeeRole: "Update employee role",
     viewAllRoles: "View all roles",
@@ -16,17 +15,6 @@ const baseQuestions = {
     exit: "Exit"
 };
 
-//connecting to the mysql possibly use the dotenv to use login secure
-const connection = mysql.createConnection({
-
-});
-
-//throw connection error if any
-connection.conect(err => {
-    if (err) throw err;
-    prompt();
-});
-
 //begining of the inquirer questions and selections
 function prompt() {
     inquirer
@@ -35,9 +23,9 @@ function prompt() {
         type: 'list',
         message: 'What would you like to do?',
         choices: [
-            promptMessages.veiwAllEmployees,
+            promptMessages.viewAllEmployees,
             promptMessages.addEmployee,
-            postMessages.updateEmployeeRole,
+            promptMessages.updateEmployeeRole,
             promptMessages.viewAllRoles,
             promptMessages.addRole,
             promptMessages.viewAllDepartments,
@@ -47,8 +35,7 @@ function prompt() {
     })
 
     .then(answer => {
-        console.log('answer', answer);
-        switch (answer.action) {
+        switch (answer.start) {
             case promptMessages.viewAllEmployees:
                 viewAllEmployees();
                 break;
@@ -58,7 +45,7 @@ function prompt() {
                 break;
 
             case promptMessages.updateEmployeeRole:
-                updateEmployeeRole();
+               updateEmployeeRole();
                 break;
 
             case promptMessages.viewAllRoles:
@@ -84,6 +71,36 @@ function prompt() {
         });
 }
 
-function veiwAllEmployees() {
-    
+function viewAllEmployees() {
+
+    prompt();
 }
+function addEmployee() {
+    prompt();
+}
+function updateEmployeeRole() {
+    prompt();
+}
+function viewAllRoles() {
+    prompt();
+}
+function addRole() {
+    // 
+    prompt();
+}
+function viewAllDepartments() {
+    db.promise().query("SELECT * FROM department").then(departmentInfo => {
+        console.table(departmentInfo[0])
+        prompt();
+    })
+}
+
+function addDepartment() {
+    prompt();
+}
+
+function exit() {
+    prompt();
+}
+
+prompt();
